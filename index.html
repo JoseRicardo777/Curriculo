@@ -39,21 +39,46 @@
             text-align: center;
         }
 
-       .profile-picture {
-    /* ... otras propiedades ... */
-    /* Asegúrate de que esta línea contenga la URL correcta: */
-    background-image: url('https://raw.githubusercontent.com/JoseRicardo777/Curriculo/main/mi-foto.jpg');
-    background-size: cover;
-    /* ... otras propiedades ... */
-}
+        /* --- CÓDIGO CORREGIDO PARA LA IMAGEN Y EL NOMBRE --- */
+        .photo-area {
+            position: relative;
+            /* Deja espacio para la foto y el nombre antes de Contacto */
+            margin-bottom: 250px; 
+            text-align: left;
+        }
 
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: -20px; 
+            left: 0px; 
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            /* URL DE TU FOTO EN GITHUB - ¡ESTA DEBE SER CORRECTA! */
+            background-image: url('https://raw.githubusercontent.com/JoseRicardo777/Curriculo/main/mi-foto.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .name {
+            position: absolute;
+            top: 130px; /* Mueve el nombre debajo de la foto */
+            left: 0;
+            text-align: left;
+            width: 100%;
+        }
+        
         .name h1 {
-            font-size: 2.2em;
+            font-size: 2.2em; /* Mantenemos el tamaño grande */
             margin: 0;
             font-weight: 700;
             line-height: 1.1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-
+        
         .left-column .section {
             margin-top: 30px;
             text-align: left;
@@ -64,7 +89,7 @@
             font-weight: 700;
             margin-bottom: 15px;
             padding-bottom: 5px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Línea divisoria blanca */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
             text-align: left;
         }
@@ -85,10 +110,13 @@
 
         .left-column .section ul li i {
             margin-right: 10px;
-            color: #ffd700; /* Color dorado para los íconos */
+            color: #ffd700;
             font-size: 1.1em;
         }
+        /* --- FIN CÓDIGO COLUMNA IZQUIERDA --- */
 
+
+        /* --- CÓDIGO COMPLETO COLUMNA DERECHA --- */
         .right-column {
             width: 65%;
             padding: 30px 40px;
@@ -118,14 +146,14 @@
             content: '';
             position: absolute;
             left: 0;
-            bottom: -2px; /* Alineado con el borde inferior */
+            bottom: -2px; 
             width: 100%;
-            height: 25px; /* Altura del fondo azul */
-            background-color: #213c54; /* Color azul oscuro */
-            z-index: -1; /* Para que el texto quede por encima */
-            transform: translateY(50%); /* Ajusta la posición vertical */
-            border-radius: 5px; /* Bordes ligeramente redondeados */
-            opacity: 0.1; /* Transparencia para que se vea sutil */
+            height: 25px; 
+            background-color: #213c54; 
+            z-index: -1; 
+            transform: translateY(50%); 
+            border-radius: 5px; 
+            opacity: 0.1; 
         }
 
         .right-column .section p {
@@ -137,7 +165,7 @@
 
         /* Estilos específicos para Mi Perfil */
         .profile p {
-            padding-top: 10px; /* Espacio entre el título y el texto */
+            padding-top: 10px; 
             margin-bottom: 0;
         }
 
@@ -190,7 +218,7 @@
 
         .skill-level {
             height: 100%;
-            background-color: #213c54; /* Color azul para la barra de nivel */
+            background-color: #213c54; 
             border-radius: 4px;
         }
 
@@ -214,70 +242,33 @@
 
         /* Media Queries para responsividad */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                width: 100%;
-                max-width: 600px;
-            }
-
-            .left-column, .right-column {
-                width: 100%;
-                padding: 20px;
-            }
-
-            .left-column {
-                text-align: center;
-            }
-            
-            .left-column .section h2 {
-                text-align: center;
-                border-bottom: none;
-                padding-bottom: 0;
-                margin-bottom: 5px;
-            }
-
-            .left-column .section ul li {
-                justify-content: center;
-            }
-
-            .profile-picture {
-                margin-bottom: 15px;
-            }
-
-            .name h1 {
-                font-size: 1.8em;
-            }
-
-            .right-column .section h2 {
-                font-size: 1.2em;
-            }
-
-            .right-column .section h2::before {
-                height: 20px;
-                transform: translateY(40%);
-            }
-
-            .skill-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .skill-bar {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 5px;
-            }
+            .container { flex-direction: column; width: 100%; max-width: 600px; }
+            .left-column, .right-column { width: 100%; padding: 20px; }
+            .left-column { text-align: center; }
+            .left-column .section h2 { text-align: center; border-bottom: none; padding-bottom: 0; margin-bottom: 5px; }
+            .left-column .section ul li { justify-content: center; }
+            .photo-area { margin-bottom: 15px; position: static; } 
+            .profile-picture { position: static; margin: 0 auto 15px auto; } 
+            .name { position: static; margin-bottom: 20px; }
+            .name h1 { font-size: 1.8em; }
+            .right-column .section h2 { font-size: 1.2em; }
+            .right-column .section h2::before { height: 20px; transform: translateY(40%); }
+            .skill-item { flex-direction: column; align-items: flex-start; }
+            .skill-bar { width: 100%; margin-left: 0; margin-top: 5px; }
         }
+        /* --- FIN CÓDIGO COMPLETO CSS --- */
     </style>
 </head>
 <body>
     <div class="container">
         <div class="left-column">
-            <div class="profile-picture">
+            <div class="photo-area">
+                <div class="profile-picture">
                 </div>
-            <div class="name">
-                <h1>José Ricardo</h1>
-                <h1>López Flores</h1>
+                <div class="name">
+                    <h1>José Ricardo</h1>
+                    <h1>López Flores</h1>
+                </div>
             </div>
 
             <div class="section contact">
@@ -353,5 +344,4 @@
         </div>
     </div>
 </body>
-
 </html>
