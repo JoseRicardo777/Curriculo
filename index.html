@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - José Ricardo López Flores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            max-width: 95%;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .left-column {
+            width: 35%;
+            background-color: #213c54; /* Color azul oscuro del sidebar */
+            color: white;
+            padding: 30px 25px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px auto;
+            border: 4px solid white; /* Borde blanco alrededor de la foto */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            /* Aquí va tu imagen de perfil. Reemplaza la URL con la de tu foto. */
+            /* Si tienes la foto en base64 o una URL pública, úsala aquí. */
+            /* Por ahora, usaremos una imagen de ejemplo o tu imagen codificada si la proporcionas. */
+            background-image: url('https://i.ibb.co/Jyq1d9C/curriculum-image.png'); /* URL de tu imagen de perfil */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .name h1 {
+            font-size: 2.2em;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .left-column .section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .left-column .section h2 {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Línea divisoria blanca */
+            color: white;
+            text-align: left;
+        }
+
+        .left-column .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .left-column .section ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .left-column .section ul li i {
+            margin-right: 10px;
+            color: #ffd700; /* Color dorado para los íconos */
+            font-size: 1.1em;
+        }
+
+        .right-column {
+            width: 65%;
+            padding: 30px 40px;
+            box-sizing: border-box;
+        }
+
+        .right-column .section {
+            margin-bottom: 30px;
+        }
+
+        .right-column .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .right-column .section h2 {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #213c54; /* Color azul oscuro para los títulos */
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd; /* Línea divisoria gris */
+            position: relative;
+        }
+
+        /* Pseudo-elemento para el fondo azul de los títulos de sección */
+        .right-column .section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px; /* Alineado con el borde inferior */
+            width: 100%;
+            height: 25px; /* Altura del fondo azul */
+            background-color: #213c54; /* Color azul oscuro */
+            z-index: -1; /* Para que el texto quede por encima */
+            transform: translateY(50%); /* Ajusta la posición vertical */
+            border-radius: 5px; /* Bordes ligeramente redondeados */
+            opacity: 0.1; /* Transparencia para que se vea sutil */
+        }
+
+        .right-column .section p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos específicos para Mi Perfil */
+        .profile p {
+            padding-top: 10px; /* Espacio entre el título y el texto */
+            margin-bottom: 0;
+        }
+
+        /* Experiencia y Formación */
+        .job-item, .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .job-item h3, .edu-item h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #213c54;
+            margin: 0 0 5px 0;
+        }
+
+        .job-item .dates, .edu-item .dates {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .job-item .description, .edu-item .description {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Herramientas */
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skill-item span {
+            flex: 1;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .skill-bar {
+            width: 60%;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: #213c54; /* Color azul para la barra de nivel */
+            border-radius: 4px;
+        }
+
+        /* Idiomas */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .lang-item .lang-name {
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .lang-item .lang-level {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Media Queries para responsividad */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .left-column, .right-column {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .left-column {
+                text-align: center;
+            }
+            
+            .left-column .section h2 {
+                text-align: center;
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 5px;
+            }
+
+            .left-column .section ul li {
+                justify-content: center;
+            }
+
+            .profile-picture {
+                margin-bottom: 15px;
+            }
+
+            .name h1 {
+                font-size: 1.8em;
+            }
+
+            .right-column .section h2 {
+                font-size: 1.2em;
+            }
+
+            .right-column .section h2::before {
+                height: 20px;
+                transform: translateY(40%);
+            }
+
+            .skill-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skill-bar {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <div class="profile-picture">
+                </div>
+            <div class="name">
+                <h1>José Ricardo</h1>
+                <h1>López Flores</h1>
+            </div>
+
+            <div class="section contact">
+                <h2>CONTACTO</h2>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> 63573812</li>
+                    <li><i class="fas fa-envelope"></i> josericardolopezflores78@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Avenida 8 de septiembre</li>
+                </ul>
+            </div>
+
+            <div class="section info">
+                <h2>INFORMACIÓN</h2>
+                <ul>
+                    <li>• Carnet de conducir</li>
+                    <li>• Disponibilidad para viajar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section profile">
+                <h2>MI PERFIL</h2>
+                <p>Mi nombre es José Ricardo López Flores, tengo 23 años, estudio en la universidad privada Domingo Savio y vivo en Santa Cruz de la Sierra.</p>
+            </div>
+
+            <div class="section experience">
+                <h2>EXPERIENCIA</h2>
+                <div class="job-item">
+                    <h3>ELECTRICISTA INTERMEDIO</h3>
+                    <p class="dates">2018-2020</p>
+                    <p class="description">Especializado en Estadística pública</p>
+                </div>
+                <div class="job-item">
+                    <h3>DISEÑADOR GRAFICO</h3>
+                    <p class="dates">2020-2023</p>
+                    <p class="description">Tengo conocimiento en Photoshop, ilustre, Canva, Worpress</p>
+                </div>
+            </div>
+
+            <div class="section education">
+                <h2>FORMACIÓN</h2>
+                <div class="edu-item">
+                    <h3>UNIVERSIDAD UPDS</h3>
+                    <p class="dates">(2022-2025)</p>
+                    <p class="description">Ingeniería en Sistema</p>
+                </div>
+            </div>
+
+            <div class="section skills">
+                <h2>HERRAMIENTAS</h2>
+                <div class="skill-item">
+                    <span>-CONOCIMIENTOS INTERMEDIO DE ELECTRICIDAD</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>-DISEÑO GRAFICO</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                </div>
+            </div>
+
+            <div class="section languages">
+                <h2>IDIOMAS</h2>
+                <div class="lang-item">
+                    <span class="lang-name">ESPAÑOL</span>
+                    <span class="lang-level">Nativo</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">INGLÉS</span>
+                    <span class="lang-level">Nivel intermedio</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
