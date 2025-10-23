@@ -39,22 +39,22 @@
             text-align: center;
         }
 
-        /* --- CÓDIGO CORREGIDO PARA LA IMAGEN Y EL NOMBRE (Diseño Original) --- */
-        .profile-picture {
-            width: 150px; /* Tamaño de la foto */
-            height: 150px;
-            border-radius: 0; /* SIN borde redondeado como tu original */
-            overflow: hidden;
-            margin: 0 auto 10px auto; /* Centrada */
-            border: 0; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el recuadro */
-            
-            /* ¡ESTA ES LA LÍNEA MÁS IMPORTANTE! */
-            background-image: url('https://raw.githubusercontent.com/JoseRicardo777/Curriculo/main/mi-foto.jpg');
-            
-            background-size: cover;
-            background-position: center;
-        }
+        /* Pega este CSS DENTRO de las etiquetas <style> de tu index.html */
+.profile-picture {
+    width: 100%; /* Ocupa todo el ancho de la columna izquierda */
+    height: 180px; /* Le damos una altura específica */
+    border-radius: 0; /* ¡MUY IMPORTANTE! Quitamos el borde circular */
+    overflow: hidden;
+    margin: -30px -25px 20px -25px; /* Mueve la foto para que ocupe todo el ancho azul */
+    border: 0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* ¡LA LÍNEA DE LA IMAGEN! */
+    background-image: url('https://raw.githubusercontent.com/JoseRicardo777/Curriculo/main/profile.jpg');
+    
+    background-size: cover;
+    background-position: center;
+}
 
         .name h1 {
             font-size: 2.2em;
@@ -322,3 +322,4 @@
     </div>
 </body>
 </html>
+
