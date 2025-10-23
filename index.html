@@ -39,33 +39,34 @@
             text-align: center;
         }
 
-        /* --- CÓDIGO EDITADO PARA LA FOTO RECTANGULAR Y URL DE FACEBOOK --- */
+        /* --- CÓDIGO FINAL CORREGIDO PARA LA FOTO --- */
         .profile-picture {
             width: 100%; /* Ocupa todo el ancho de la columna izquierda */
-            height: 180px; /* Le damos una altura específica */
-            border-radius: 0; /* ¡MUY IMPORTANTE! Quitamos el borde circular */
+            height: 180px; /* Altura de la imagen */
+            border-radius: 0; /* Sin bordes redondeados (rectangular) */
             overflow: hidden;
-            /* Estos márgenes hacen que la foto ocupe el ancho del padding de la columna */
-            margin: -30px -25px 20px -25px; 
+            /* Ajusta los márgenes para que ocupe todo el ancho de la columna azul */
+            margin: -30px -25px 0px -25px; 
             border: 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             
             /* URL DIRECTA DE FACEBOOK */
             background-image: url('https://scontent.fsrz2-1.fna.fbcdn.net/v/t39.30808-6/243151020_1708596619530024_4251649347225331793_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=g82Yl_nAfjcQ7kNvwEvjTQ3&_nc_oc=AdlqPAB4YiNTP7h4IM88U3e6lOtO5Q0BxJfxJGise-J-lv47owxAWgSesNeHftLI3A8&_nc_zt=23&_nc_ht=scontent.fsrz2-1.fna&_nc_gid=1wFFGaLvebX3Y9M6EktcuA&oh=00_AffKa2pnZ2RIP_f-U1tNYdN-lBmDvFKSBnY1QPXQL8ivnA&oe=690090C8');
             
-            background-size: cover;
-            background-position: center;
+            background-size: cover; /* Asegura que la imagen cubra el área */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* ¡EVITA LA REPETICIÓN DE LA IMAGEN! */
         }
-        /* ---------------------------------------------------------------- */
 
         .name h1 {
             font-size: 2.2em;
-            margin: 10px 0 30px 0;
+            margin: 20px 0 30px 0; /* Espacio debajo y encima del nombre */
             font-weight: 700;
             line-height: 1.1;
             text-align: center;
         }
-        
+        /* --------------------------------------------------------------- */
+
         .left-column .section {
             margin-top: 30px;
             text-align: left;
@@ -97,11 +98,11 @@
 
         .left-column .section ul li i {
             margin-right: 10px;
-            color: #ffd700; /* Color amarillo para los íconos */
+            color: #ffd700; 
             font-size: 1.1em;
         }
 
-        /* --- CÓDIGO COLUMNA DERECHA (SIN CAMBIOS) --- */
+        /* --- CÓDIGO COLUMNA DERECHA (MANTENIDO) --- */
         .right-column {
             width: 65%;
             padding: 30px 40px;
@@ -227,13 +228,15 @@
             .left-column { text-align: center; }
             .left-column .section h2 { text-align: center; border-bottom: none; padding-bottom: 0; margin-bottom: 5px; }
             .left-column .section ul li { justify-content: center; }
-            .profile-picture { margin: 0 auto 15px auto; width: 150px; height: 150px; } /* Ajuste para móviles */
+            /* Ajuste para que la foto se vea bien en móvil */
+            .profile-picture { margin: -20px -20px 15px -20px; height: 150px; } 
             .name h1 { font-size: 1.8em; }
             .right-column .section h2 { font-size: 1.2em; }
             .right-column .section h2::before { height: 20px; transform: translateY(40%); }
             .skill-item { flex-direction: column; align-items: flex-start; }
             .skill-bar { width: 100%; margin-left: 0; margin-top: 5px; }
         }
+        /* --- FIN CÓDIGO COMPLETO CSS --- */
     </style>
 </head>
 <body>
